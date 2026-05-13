@@ -26,7 +26,7 @@ Under correct config isolation, neither module needs the other module's driver.
 
 ## Versions
 
-- Quarkus plugin: `3.35.1` (set in `gradle.properties`; change to `3.34.7` to
+- Quarkus plugin: `3.35.3` (set in `gradle.properties`; change to `3.34.7` to
   confirm pre-regression behaviour passes)
 - Gradle: `9.5.0` (wrapper)
 - Java: 21+
@@ -40,7 +40,7 @@ From clean state:
 ./gradlew build
 ```
 
-Result on Quarkus 3.35.1:
+Result on Quarkus 3.35.3:
 
 ```
 > Task :module-b:quarkusAppPartsBuild FAILED
