@@ -26,7 +26,7 @@ Under correct config isolation, neither module needs the other module's driver.
 
 ## Versions
 
-- Quarkus plugin: `3.35.3` (set in `gradle.properties`; change to `3.34.7` to
+- Quarkus plugin: `3.35.4` (set in `gradle.properties`; change to `3.34.7` to
   confirm pre-regression behaviour passes)
 - Gradle: `9.5.0` (wrapper)
 - Java: 21+
@@ -40,7 +40,7 @@ From clean state:
 ./gradlew build
 ```
 
-Result on Quarkus 3.35.3:
+Result on Quarkus 3.35.4:
 
 ```
 > Task :module-b:quarkusAppPartsBuild FAILED
@@ -50,7 +50,7 @@ Result on Quarkus 3.35.3:
   Unable to load the datasource driver org.postgresql.Driver for the datasource
   named 'ds-a'
   Caused by: java.lang.ClassNotFoundException: org.postgresql.Driver
-      at io.quarkus.agroal.deployment.AgroalProcessor.validateBuildTimeConfig(AgroalProcessor.java:168)
+      at io.quarkus.agroal.deployment.AgroalProcessor.validateBuildTimeConfig(AgroalProcessor.java:170)
 ```
 
 The smoking gun is `'ds-a'` — that datasource is defined only in
